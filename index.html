@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="authApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auth Application</title>
+
+    <!-- Thêm thẻ <base> để hỗ trợ HTML5 Mode -->
+    <base href="/" />
+
+    <!-- Sử dụng TailwindCSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- AngularJS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
+    <!-- Các tệp JavaScript của ứng dụng -->
+    <script src="app.js"></script>
+    <script src="services/authService.js"></script>
+    <script src="controllers/loginController.js"></script>
+    <script src="controllers/registerController.js"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div ng-view></div>
+  </body>
+</html>

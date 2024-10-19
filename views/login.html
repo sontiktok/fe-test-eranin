@@ -1,0 +1,75 @@
+<div class="h-screen w-screen flex">
+  <!-- Phần bên trái: Form đăng nhập -->
+  <div class="w-1/2 flex flex-col items-center justify-center bg-white p-8">
+    <div class="bg-white shadow-lg rounded-lg p-10 w-full max-w-md">
+      <!-- Khung bọc form -->
+      <!-- Tiêu đề -->
+      <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">
+        We are The Lotus Team
+      </h2>
+
+      <!-- Mô tả -->
+      <p class="text-gray-600 mb-6 text-center">Please login to your account</p>
+
+      <!-- Form đăng nhập với ng-submit -->
+      <form ng-submit="login()" class="w-full space-y-4">
+        <div>
+          <input
+            type="text"
+            placeholder="Email"
+            ng-model="credentials.email"
+            class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            placeholder="Password"
+            ng-model="credentials.password"
+            class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+        </div>
+
+        <!-- Nút Đăng nhập -->
+        <button
+          type="submit"
+          class="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold py-3 rounded-md hover:from-purple-600 hover:to-blue-600"
+        >
+          LOG IN
+        </button>
+
+        <!-- Quên mật khẩu -->
+        <a
+          href="#"
+          class="text-sm text-purple-500 hover:underline text-center block mt-2"
+          >Forgot password?</a
+        >
+      </form>
+
+      <!-- Đăng ký -->
+      <div class="mt-4 text-center">
+        <p class="text-sm text-gray-600">
+          Don't have an account?
+          <a href="#" class="text-red-500 font-semibold hover:underline"
+            >REGISTER</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phần bên phải: Giới thiệu công ty -->
+  <div
+    class="w-1/2 bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center text-white p-12 h-full"
+  >
+    <div class="max-w-md text-left">
+      <h2 class="text-3xl font-bold mb-4">We are more than just a company</h2>
+      <p class="text-base leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+    </div>
+  </div>
+</div>
