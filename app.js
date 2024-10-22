@@ -1,4 +1,3 @@
-// Đảm bảo rằng module "authApp" được khai báo trước khi sử dụng AuthService
 var app = angular.module("authApp", ["ngRoute"]);
 
 app.config(function ($routeProvider, $locationProvider) {
@@ -11,10 +10,28 @@ app.config(function ($routeProvider, $locationProvider) {
     .when("/login", {
       templateUrl: "views/login.html",
       controller: "LoginController",
+      resolve: {
+        auth: function (AuthService, $location) {
+          if (AuthService.isAuthenticated()) {
+            $location.path("/product");
+          }
+        },
+      },
     })
     .when("/register", {
       templateUrl: "views/register.html",
       controller: "RegisterController",
+    })
+    .when("/product", {
+      templateUrl: "views/product.html",
+      controller: "ProductController",
+      resolve: {
+        auth: function (AuthService, $location) {
+          if (!AuthService.isAuthenticated()) {
+            $location.path("/login");
+          }
+        },
+      },
     })
     .otherwise({
       redirectTo: "/login",
